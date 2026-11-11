@@ -7803,7 +7803,7 @@ a.anchor-link {
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
 <h1 id="Task-1">Task 1<a class="anchor-link" href="#Task-1">¶</a></h1><h2 id="Statement-of-AI-use-:">Statement of AI use :<a class="anchor-link" href="#Statement-of-AI-use-:">¶</a></h2><p>AI was used by the group to set up and understand the jupyter notebook, since we have never used a similar environment before.
-It was also used for plotting tips when the result was not shown clear enough, for example how to make "linestyle='--'" that we did not remember from our last course.</p>
+It was also used for getting clearer plottings when the result was not shown good enough. One example was how to make "linestyle='--'" which we have used in a previous course, but could not remember how to apply.</p>
 <h2 id="Task-1a">Task 1a<a class="anchor-link" href="#Task-1a">¶</a></h2>
 </div>
 </div>
@@ -7821,12 +7821,12 @@ It was also used for plotting tips when the result was not shown clear enough, f
 <span class="kn">from</span><span class="w"> </span><span class="nn">scipy</span><span class="w"> </span><span class="kn">import</span> <span class="n">signal</span>
 <span class="kn">import</span><span class="w"> </span><span class="nn">sounddevice</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">sd</span>
 
-<span class="c1"># Generate a time vector ’t’ and the incrementing ∆t = 0,01ms as suggested in the assignment</span>
+<span class="c1"># Generate a time vector ’t’ and the incrementing ∆t = 0,01ms = 0,00001s as suggested in the assignment</span>
 <span class="n">dt</span> <span class="o">=</span> <span class="mf">0.00001</span>
 <span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
 
-<span class="c1">## For x1: period T=0.01s, amplitude A=1, phase shift φ = 0 and f= 1/T = 1/0,01 = 100</span>
-<span class="c1">## For x2: amplitude A=1, phase shift φ = -pi/4 </span>
+<span class="c1">## For x1: period T=0.01s, amplitude A=1, phase shift φ = 0 and f= 1/T = 1/0,01 = 100Hz</span>
+<span class="c1">## For x2: amplitude A=1, phase shift φ = -pi/4 and f=1000Hz</span>
 <span class="n">x1</span> <span class="o">=</span> <span class="mi">1</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mi">100</span><span class="o">*</span><span class="n">t</span><span class="o">+</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">x2</span> <span class="o">=</span> <span class="mi">1</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mi">1000</span><span class="o">*</span><span class="n">t</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
 
@@ -7871,8 +7871,8 @@ It was also used for plotting tips when the result was not shown clear enough, f
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Task-1b">Task 1b<a class="anchor-link" href="#Task-1b">¶</a></h2><h3 id="Reflection">Reflection<a class="anchor-link" href="#Reflection">¶</a></h3><p>The first signal x1 has a frequency of 100Hz and gives of a dark humming that could remind one of a refridgerator.</p>
-<p>The second signal x2 with a frequency of 1000Hz gives of a higher pitched noise that reminds us of a telephone tone.</p>
+<h3 id="Explanation-of-plot-of-1a">Explanation of plot of 1a<a class="anchor-link" href="#Explanation-of-plot-of-1a">¶</a></h3><p>This plot shows x1(t) (100Hz) and x2(t) (1000Hz). Because x2(t) has ten times the frequency of x1(t),it completes ten full periods within the time window, while x1(t) completes only one. Both waves maintain a peak amplitude of 1.</p>
+<h2 id="Task-1b">Task 1b<a class="anchor-link" href="#Task-1b">¶</a></h2><p>The two generated signals differ noticeably in perceived acoustic pitch. The first signal (x1, 100Hz) produces a low, dark hum similar to the sound of a refrigerator. In contrast, the second signal (x2, 1000Hz) produces a much higher-pitched tone, resembling a classic telephone dial tone. Mathematically, frequency f represents the number of full oscillation cycles per second (f = 1/T). Because the 1000Hz signal completes ten times more cycles per second than the 100Hz signal, the sound wave oscillates much faster, which our ears pick up as a higher pitch.</p>
 </div>
 </div>
 </div>
@@ -7892,7 +7892,7 @@ It was also used for plotting tips when the result was not shown clear enough, f
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [5]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [8]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -7970,8 +7970,8 @@ It was also used for plotting tips when the result was not shown clear enough, f
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h3 id="Explanation-of-Dirac-delta-function-and-output-impulse-response-plot">Explanation of Dirac delta function and output-impulse response plot<a class="anchor-link" href="#Explanation-of-Dirac-delta-function-and-output-impulse-response-plot">¶</a></h3><p>When plotting the Dirac delta function we got the characteristic L-plot, which was shown in previous lectures. Therefore we made the assumtion that the result was correct.</p>
-<p>When analyzing the output and impulse response plot, we can see that they are identical. The definition of impulse response and input-output relationships is that with an inout x(t) is equal to the dirac delta funtion, which is called the system's impulse response h(t) (x(t)=ς(t) -&gt; y(t)=h(t)). This would explain why y(t) is equal to h(t).</p>
+<h3 id="Explanation-of-Dirac-delta-function-and-output-impulse-response-plot">Explanation of Dirac delta function and output-impulse response plot<a class="anchor-link" href="#Explanation-of-Dirac-delta-function-and-output-impulse-response-plot">¶</a></h3><p>When plotting the Dirac delta function we got the characteristic "L-shaped" plot, which was shown in previous lectures. This is because the Dirac delta function is approximated as a pulse at t = 0 with an amplitude of 1/Δt and zero elsewhere, creating a sharp spike at the origin followed by zero for all t &gt; 0, where the height of 1/Δt normalizes the area under the pulse to 1.</p>
+<p>When analyzing the output and impulse response plot, we can see that they are identical. The definition of impulse response and input-output relationships is that with an input x(t) is equal to the dirac delta funtion, which is called the system's impulse response h(t) (x(t)=δ(t) -&gt; y(t)=h(t)). This would explain why y(t) is equal to h(t).</p>
 </div>
 </div>
 </div>
@@ -7991,7 +7991,7 @@ It was also used for plotting tips when the result was not shown clear enough, f
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [6]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [9]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">numpy</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">np</span>
@@ -8003,8 +8003,8 @@ It was also used for plotting tips when the result was not shown clear enough, f
 <span class="n">t3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.02</span><span class="p">,</span> <span class="n">dt</span><span class="p">)</span>
 
 <span class="c1"># Retrieved from Task 1</span>
-<span class="c1">## For x1: period T=0.01s, amplitude A=1, phase shift φ = 0 and f= 1/T = 1/0,01 = 100</span>
-<span class="c1">## For x2: amplitude A=1, phase shift φ = -pi/4 </span>
+<span class="c1">## For x1: period T=0.01s, amplitude A=1, phase shift φ = 0 and f= 1/T = 1/0,01 = 100Hz</span>
+<span class="c1">## For x2: amplitude A=1, phase shift φ = -pi/4 and f=1000Hz</span>
 <span class="n">x1</span> <span class="o">=</span> <span class="mi">1</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mi">100</span><span class="o">*</span><span class="n">t3</span><span class="o">+</span><span class="mi">0</span><span class="p">)</span>
 <span class="n">x2</span> <span class="o">=</span> <span class="mi">1</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="mi">1000</span><span class="o">*</span><span class="n">t3</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
 
